@@ -1,6 +1,6 @@
 ---
 title: Jupyter Book
-description: ""
+description: Export your Curvenote project as a Jupyter Book
 date: 2022-01-19T03:37:50.032Z
 author:
   - "@rowanc1"
