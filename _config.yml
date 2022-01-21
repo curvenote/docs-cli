@@ -1,9 +1,9 @@
 # Jupyter Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Curvenote CLI
-author: docs
-logo: logo.png
+title: ''
+author: Curvenote
+logo: images/logo.svg
 
 execute:
   execute_notebooks: force
