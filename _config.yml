@@ -25,6 +25,8 @@ repository:
 
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
+  favicon: images/favicon.ico
+  google_analytics_id: G-4P4Z3X7QKB
   use_issues_button: true
   use_repository_button: true
   use_edit_page_button: true

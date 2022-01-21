@@ -4,8 +4,9 @@
 format: jb-book
 root: index
 chapters:
-  - file: export
-  - file: latex-and-pdfs
-  - file: jupyter-book
   - file: authorization
+  - file: export
+    sections:
+      - file: latex-and-pdfs
+      - file: jupyter-book
 

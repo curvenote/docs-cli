@@ -10,9 +10,9 @@ oxa: oxa:EplL6AlILV3RGEDPzj5U/qO37OgRXvWSbykWGvaDR
 
 # Curvenote CLI
 
-+++ {"oxa":"oxa:EplL6AlILV3RGEDPzj5U/IaFX0NQNRnPdm5tvByQ2.5","pinned":false}
++++ {"oxa":"oxa:EplL6AlILV3RGEDPzj5U/IaFX0NQNRnPdm5tvByQ2.6","pinned":false}
 
-`curvenote` is a library and a command line interface (CLI) that provides modern tooling for technical writing and reproducible science. Our mission is to help in transitioning scientific communication out of static documents and promote more connections between how researchers work, and how they share that work.
+`curvenote` is a library and a command line interface (CLI) that provides modern tooling for technical writing and reproducible science. Our [mission](https://curvenote.com/why) is to help in transitioning scientific communication out of static documents and promote more connections between how researchers work, and how they share that work.
 
 Critical to that mission is providing tools that:
 
@@ -34,18 +34,27 @@ We are releasing a version of `curvenote` on Jan 20, 2022 that is an early previ
 4. support new interactive formats for HTML publishing.
 ```
 
-+++ {"oxa":"oxa:EplL6AlILV3RGEDPzj5U/K4wNaODT2DBRm1NwVVNY.3","pinned":false}
++++ {"oxa":"oxa:EplL6AlILV3RGEDPzj5U/K4wNaODT2DBRm1NwVVNY.4","pinned":false}
 
 ## **Installing** `curvenote`
 
+Curvenote is currently available through Node, you will have to [install Node](https://nodejs.org/en/) and make sure you have `npm` (Node package manager) installed. If you have installed Jupyter, you likely also have Node installed on your computer, so the following command may just work! 🙂
+
 ```shell
 npm install -g curvenote
-curvenote token set YOUR_TOKEN
-curvenote export docx https://curvenote.com/@curvenote/blog/communicating-science communicating-science.docx
-curvenote export md https://curvenote.com/@curvenote/blog/version-control-for-scientists version-control.md
 ```
 
-### Dependencies
+This will install `curvenote` globally (`-g`) on your system and add a link to the main CLI tool. To see if things worked, try checking the version with:
+
+```shell
+curvenote -v
+```
+
+Which should print the current version of the package. If all is good, you can type `curvenote` again in your terminal and it will list the help with all of the options available to you.
+
++++ {"oxa":"oxa:EplL6AlILV3RGEDPzj5U/YqsgIMcfgtnP9cyOzlGZ.1","pinned":false}
+
+### Dependencies for LaTeX and PDF
 
 If you are exporting to LaTeX with an open-source template specified (see all [templates](https://github.com/curvenote/templates)) or if you are creating a PDF you will need to install the [jtex](https://pypi.org/project/jtex/) python package to be installed and available on the user's `PATH`. With [Python 3.7](https://www.python.org/downloads/) or greater installed, install `jtex` via pip:
 
@@ -54,6 +63,8 @@ If you are exporting to LaTeX with an open-source template specified (see all [t
 ```
 
 For LaTeX PDF builds you will also require a version of LaTeX to be installed.
+
++++ {"oxa":"oxa:EplL6AlILV3RGEDPzj5U/MSQinWImjrfaa13213mK.1","pinned":false}
 
 ## **Usage as a package**
 
