@@ -49,15 +49,24 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Export" href="export.html" />
+    <link rel="next" title="Authorization" href="authorization.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
 
     <!-- Google Analytics -->
     
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-4P4Z3X7QKB"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('js', new Date());
+                    gtag('config', 'G-4P4Z3X7QKB');
+                </script>
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -92,24 +101,31 @@
 </ul>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="export.html">
-   Export
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="latex-and-pdfs.html">
-   LaTeX and PDFs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="jupyter-book.html">
-   Jupyter Book
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="authorization.html">
    Authorization
   </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="export.html">
+   Export
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="latex-and-pdfs.html">
+     LaTeX and PDFs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jupyter-book.html">
+     Jupyter Book
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -213,8 +229,8 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dependencies">
-     Dependencies
+    <a class="reference internal nav-link" href="#dependencies-for-latex-and-pdf">
+     Dependencies for LaTeX and PDF
     </a>
    </li>
   </ul>
@@ -264,8 +280,8 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dependencies">
-     Dependencies
+    <a class="reference internal nav-link" href="#dependencies-for-latex-and-pdf">
+     Dependencies for LaTeX and PDF
     </a>
    </li>
   </ul>
@@ -293,7 +309,7 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="curvenote-cli">
 <h1>Curvenote CLI<a class="headerlink" href="#curvenote-cli" title="Permalink to this headline">¶</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">curvenote</span></code> is a library and a command line interface (CLI) that provides modern tooling for technical writing and reproducible science. Our mission is to help in transitioning scientific communication out of static documents and promote more connections between how researchers work, and how they share that work.</p>
+<p><code class="docutils literal notranslate"><span class="pre">curvenote</span></code> is a library and a command line interface (CLI) that provides modern tooling for technical writing and reproducible science. Our <a class="reference external" href="https://curvenote.com/why">mission</a> is to help in transitioning scientific communication out of static documents and promote more connections between how researchers work, and how they share that work.</p>
 <p>Critical to that mission is providing tools that:</p>
 <ol class="simple">
 <li><p>are accessible to programmers and non-programmers alike;</p></li>
@@ -315,14 +331,17 @@
 </div>
 <div class="section" id="installing-curvenote">
 <h2><strong>Installing</strong> <code class="docutils literal notranslate"><span class="pre">curvenote</span></code><a class="headerlink" href="#installing-curvenote" title="Permalink to this headline">¶</a></h2>
+<p>Curvenote is currently available through Node, you will have to <a class="reference external" href="https://nodejs.org/en/">install Node</a> and make sure you have <code class="docutils literal notranslate"><span class="pre">npm</span></code> (Node package manager) installed. If you have installed Jupyter, you likely also have Node installed on your computer, so the following command may just work! 🙂</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>npm install -g curvenote
-curvenote token <span class="nb">set</span> YOUR_TOKEN
-curvenote <span class="nb">export</span> docx https://curvenote.com/@curvenote/blog/communicating-science communicating-science.docx
-curvenote <span class="nb">export</span> md https://curvenote.com/@curvenote/blog/version-control-for-scientists version-control.md
 </pre></div>
 </div>
-<div class="section" id="dependencies">
-<h3>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h3>
+<p>This will install <code class="docutils literal notranslate"><span class="pre">curvenote</span></code> globally (<code class="docutils literal notranslate"><span class="pre">-g</span></code>) on your system and add a link to the main CLI tool. To see if things worked, try checking the version with:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>curvenote -v
+</pre></div>
+</div>
+<p>Which should print the current version of the package. If all is good, you can type <code class="docutils literal notranslate"><span class="pre">curvenote</span></code> again in your terminal and it will list the help with all of the options available to you.</p>
+<div class="section" id="dependencies-for-latex-and-pdf">
+<h3>Dependencies for LaTeX and PDF<a class="headerlink" href="#dependencies-for-latex-and-pdf" title="Permalink to this headline">¶</a></h3>
 <p>If you are exporting to LaTeX with an open-source template specified (see all <a class="reference external" href="https://github.com/curvenote/templates">templates</a>) or if you are creating a PDF you will need to install the <a class="reference external" href="https://pypi.org/project/jtex/">jtex</a> python package to be installed and available on the user’s <code class="docutils literal notranslate"><span class="pre">PATH</span></code>. With <a class="reference external" href="https://www.python.org/downloads/">Python 3.7</a> or greater installed, install <code class="docutils literal notranslate"><span class="pre">jtex</span></code> via pip:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>  python -m pip install jtex
 </pre></div>
@@ -381,10 +400,10 @@ yarn dev:cli
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="export.html" title="next page">
+    <a class='right-next' id="next-link" href="authorization.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Export</p>
+        <p class="prev-next-title">Authorization</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
